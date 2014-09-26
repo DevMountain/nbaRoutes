@@ -56,6 +56,29 @@ html, body {
   text-align: center;
 }
 
+.large {
+  font-size: 18px;
+  position: relative;
+  bottom: 4px;
+}
+
+.form {
+  width: 80%;
+  margin: 45px auto;
+  text-align: center;
+}
+
+ .inputs {
+    padding: 4px;
+    border-radius: 3px;
+    border: 1px solid #CCC;
+    background-image: none;
+    width: 89px;
+}
+
+.inputs:focus {
+    outline-color: #54B4AD;
+}
 .btn {
   background: rgba(0, 0, 0, 0.77);
   color: white;
