@@ -62,6 +62,11 @@ html, body {
   bottom: 4px;
 }
 
+.home {
+  text-align: center;
+  font-size: 55px;
+}
+
 .form {
   width: 80%;
   margin: 45px auto;

@@ -5,7 +5,7 @@ app.config(function($routeProvider, $httpProvider){
 
   $routeProvider
     .when('/', {
-      template: '<p> HOME ROUTE </p>',
+      template: '<div class="home"> NBA ROUTER! </div>',
     })
     .when('/teams/:team', {
       templateUrl: 'js/teams/teamTmpl.html',
