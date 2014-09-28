@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="nbaRoutes">
+  <head>
+    <meta charset="UTF-8">
+    <title>NBA Router</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300italic' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="main-container" ng-controller="mainCtrl">
+      <div class="menu">
+        <ul> 
+          <li><a href="/"> Home </a></li>
+          <li><a href="/#/teams/utahjazz"> Utah Jazz </a></li>
+          <li><a href="/#/teams/losangeleslakers"> Los Angeles Lakers </a></li>
+          <li><a href="/#/teams/miamiheat"> Miami Heat </a></li>
+        </ul>
+      </div>
+      <ng-view></ng-view>
+    </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.20/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.20/angular-route.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/mainCtrl.js"></script>
+    <script src="js/defaultHeaders.js"></script>
+    <script src="js/teams/teamCtrl.js"></script>
+    <script src="js/teams/teamService.js"></script>
+    <script src="js/home/homeCtrl.js"></script>
+    <script src="js/home/homeService.js"></script>
+  </body>
+</html>
