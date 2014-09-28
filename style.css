@@ -56,6 +56,12 @@ html, body {
   text-align: center;
 }
 
+.together-game {
+  margin: 20px auto;
+  font-size: 18px;
+  text-align: center;
+}
+
 .large {
   font-size: 18px;
   position: relative;
@@ -67,6 +73,12 @@ html, body {
   font-size: 55px;
 }
 
+.team-container {
+  width: 32%;
+  float: left;
+  margin: 2px;
+}
+
 .form {
   width: 80%;
   margin: 45px auto;
@@ -74,16 +86,25 @@ html, body {
 }
 
  .inputs {
-    padding: 4px;
-    border-radius: 3px;
-    border: 1px solid #CCC;
-    background-image: none;
-    width: 89px;
+  padding: 4px;
+  border-radius: 3px;
+  border: 1px solid #CCC;
+  background-image: none;
+  width: 89px;
 }
 
 .inputs:focus {
     outline-color: #54B4AD;
 }
+
+.team-container h4{
+  text-align: center;
+}
+
+.team-container img {
+  width: 100%;
+}
+
 .btn {
   background: rgba(0, 0, 0, 0.77);
   color: white;
