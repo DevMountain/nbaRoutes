@@ -27,8 +27,55 @@ NBA Routes is the first exposure you'll get to building a full fledge app with m
 * Now that we have complete wins and losses variables, we need to somehow access those variables outside of our service. We know that we have a results array which holds an array of all the games the particular team has played. What if we do something a little unconventional here. We know we're going to eventually resolve our promise we made earlier with the results variable (so we can access all the games in our controller). We also know that an array is really just an object at heart. Let's add a 'wins' property to the results array and set it equal to our wins variable and let's also set a 'losses' property on our results array and set it equal to our losses variable. I know this is a little weird because we're not adding items to our array like we usually do but instead we're adding properties to this array. It's a good reminder that arrays are just objects. Once you add the wins and losses property, go ahead and resolve our deferred object we made earlier with our results array.
 * Now that we've set up those two methods on our teamService object, we can close teamService. We won't need to modify this file again but we will need to call the methods we set up in teamService.js later.
 
-##Step 2: Start to Configure the Router
+##Step 3: Start to Configure the Router
 * As I mentioned in step 1, setting up the router is perhaps the most important part of this entire application. Our router is going to decide which template and controller get used based on what URL we're currently on.
-* Open up your app.js file. We're going to ignore our index (/) page for a little bit while we set up each teams specific routes. 
+* Open up your app.js file. We're going to ignore our index (/) page for a little bit while we set up each teams specific routes. So for now, modify your router so whenever the user is at the index page (/), have the templateUrl be js/home.homeTmpl.html and the controller be 'homeCtrl'.
+* Now we're going to set up the individual team's routes. It's importat to understand that all three teams (Jazz, Lakers, Heat) are going to be using the same Controller and the same Template.
+* Whenever the user goes to '/teams/:team' use 'js/teams/teamTmpl.html' as the templateUrl and use 'teamCtrl' as the controller. 
+* Take note of the /:team that's in the URL. Remember, that makes it so your application is able to keep track of certain states based on which team is located in the URL. For example, when the user visits yoursite.com/teams/utahjazz, in our controller $routeParams.team is going to be equal to 'utahjazz'. This allows us to then pass in the specific team into our getTeamData method that's on our service and get only that teams data. Also note that the menu in our index.html page have links that point to the different teams (which will be caught by :team in our router).
+* Now that our templateUrl and our controller are set up for the /teams/:team url, we want to have some data ready for us before that route loads. In this case, that data we want available in our controller is the specific teams data. 
+* Below where we specify the controller create a resolve blog with the key being 'resolve' and the value being an object. That object is going to have a method called teamData which returns the promise that gets returned from teamService.getTeamData(). That was really wordy I know. Look up the syntax for how resolve works. What's going to happen is we're going to call the getTeamData method on our teamService service. That will return a promise which will then be resolved and the data we get back from that promise will then be available to us in our controller as teamData, so head over to your teamCtrl.js file and add teamData as a parameter which is passed into your controller. 
+* You might have noticed that we're calling the getTeamData method on our teamService service but that method requires a parameter which should be the specific team whose data we want, ie utahjazz, miamiheat, or losangeleslakers. Remember, we know which team's data we want to get based on the :team parameter in our route. We get access to that variable in our resolve block by using $route.current.params.team. So now go ahead and pass $route.current.params.team into your getTeamData method call.
+* Let's make one last change to the router for now. Add a .otherwise block so that the router will redirect to the index page if the route the user types in is not recognized.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
