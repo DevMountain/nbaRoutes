@@ -4,7 +4,7 @@
     <h4> Utah Jazz <br />Wins: {{jazzData.wins}} Losses: {{jazzData.losses}} </h4>
     <div class="together-game" ng-repeat="game in jazzData" ng-class="{'even' : $index % 2 === 0}">
       Date: {{game.createdAt | date}} <br />
-      {{homeTeam}} - {{game.homeTeamScore}} <br />
+      Utah Jazz - {{game.homeTeamScore}} <br />
       {{game.opponent}} - {{game.opponentScore}} </br />
     </div>
   </div>
@@ -13,7 +13,7 @@
     <h4> Los Angeles Lakers <br />Wins: {{lakerData.wins}} Losses: {{lakerData.losses}} </h4>
     <div class="together-game" ng-repeat="game in lakerData" ng-class="{'even' : $index % 2 === 0}">
       Date: {{game.createdAt | date}} <br />
-      {{homeTeam}} - {{game.homeTeamScore}} <br />
+      Los Angeles Lakers - {{game.homeTeamScore}} <br />
       {{game.opponent}} - {{game.opponentScore}} </br />
     </div>
   </div>
@@ -22,7 +22,7 @@
     <h4> Miami Heat <br />Wins: {{heatData.wins}} Losses: {{heatData.losses}} </h4>
     <div class="together-game" ng-repeat="game in heatData" ng-class="{'even' : $index % 2 === 0}">
       Date: {{game.createdAt | date}} <br />
-      {{homeTeam}} - {{game.homeTeamScore}} <br />
+      Miami Heat - {{game.homeTeamScore}} <br />
       {{game.opponent}} - {{game.opponentScore}} </br />
     </div>
   </div>
