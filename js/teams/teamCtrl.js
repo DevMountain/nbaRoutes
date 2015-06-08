@@ -7,7 +7,7 @@ app.controller('teamCtrl', function($scope, $routeParams, teamService, teamData)
 
   $scope.toggleNewGameForm = function(){
     $scope.showNewGameForm = !$scope.showNewGameForm;
-  }
+  };
 
   if($routeParams.team === 'utahjazz'){
       $scope.homeTeam = 'Utah Jazz';
@@ -29,7 +29,7 @@ app.controller('teamCtrl', function($scope, $routeParams, teamService, teamData)
             $scope.teamData = data;
             $scope.newGame = {};
             $scope.showNewGameForm = false;
-          })
+          });
       });
-  }
+  };
 });
