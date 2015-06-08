@@ -7,20 +7,22 @@
   </div>
   <div class="btn" ng-click="????????"> Add a New Game </div>
   <form ng-show="????????" class="form">
-    <span class="large">Opponent:</span> <br /><select ng-model="????????" ng-options="team for team in teams" class="form-control" required name="team"></select> <br /><br />
-    <span class="large">Score:</span> <br /> ????????: <input class="inputs" type="text" ng-model="????????" placeholder="Home Score"> ????????: <input type="text" class="inputs" ng-model="????????" placeholder="Opponent Score"> <br /><br />
+    <span class="large"> Opponent: </span> <br />
+    <select ng-model="????????" ng-options="team for team in teams" class="form-control" required name="team"></select> <br />
+    <span class="large"> Score: </span> <br />
+    ????????: <input class="inputs" type="text" ng-model="????????" placeholder="Home Score">
+    ????????: <input type="text" class="inputs" ng-model="????????" placeholder="Opponent Score"> <br />
     <button ng-click="????????"> Submit Game </button>
   </form>
   <div class="team-data">
     <div class="game" ng-repeat="game in teamData" ng-class="{'even' : $index % 2 === 0}">
-      Date: ???????? <br />
-      <!-- 
-        The below question marks should render like this
-        Utah Jazz (Or name of Team) - Score of the particular Game
-        Opponent Name - Opponent Score for that Game
+      <!-- Each game should end up looking something like this:
+        Date: May 29, 1997
+        Utah Jazz - 103
+        Houston Rockets - 100
       -->
-
-      ???????? - ????????<br />
+      Date: ???????? <br />
+      ???????? - ???????? <br />
       ???????? - ???????? </br />
     </div>
   </div>
