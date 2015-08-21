@@ -1,3 +1,70 @@
-<div class="inner-container">
+<div style='display: flex;'>
+	<div class="left">
+	  <div class="logo">
+	    <img ng-src="{{jazzData.logoPath}}">
+	  </div>
+	  <div class="record">
+	      <h1> Wins: {{jazzData.wins}} Losses: {{jazzData.losses}} </h1>
+	  </div>
 
+	  <div class="team-data">
+	    <div class="game" ng-repeat="game in jazzData" ng-class="{'even' : $index % 2 === 0}">
+	      <!-- Each game should end up looking something like this:
+	        Date: May 29, 1997
+	        Utah Jazz - 103
+	        Houston Rockets - 100
+	      -->
+	      Date: {{game.createdAt | date}} <br />
+	      {{homeTeam}} - {{game.homeTeamScore}} <br />
+	      {{game.opponent}} - {{game.opponentScore}} </br />
+	    </div>
+	  </div>
+	</div>
+
+
+	<div class="mid">
+	  <div class="logo">
+	    <img ng-src="{{lakersData.logoPath}}">
+	  </div>
+	  <div class="record">
+	      <h1> Wins: {{lakersData.wins}} Losses: {{lakersData.losses}} </h1>
+	  </div>
+
+	  <div class="team-data">
+	    <div class="game" ng-repeat="game in lakersData" ng-class="{'even' : $index % 2 === 0}">
+	      <!-- Each game should end up looking something like this:
+	        Date: May 29, 1997
+	        Utah Jazz - 103
+	        Houston Rockets - 100
+	      -->
+	      Date: {{game.createdAt | date}} <br />
+	      {{homeTeam}} - {{game.homeTeamScore}} <br />
+	      {{game.opponent}} - {{game.opponentScore}} </br />
+	    </div>
+	  </div>
+	</div>
+
+
+	<div class="right">
+	  <div class="logo">
+	    <img ng-src="{{heatData.logoPath}}">
+	  </div>
+	  <div class="record">
+	      <h1> Wins: {{heatData.wins}} Losses: {{heatData.losses}} </h1>
+	  </div>
+
+	  <div class="team-data">
+	    <div class="game" ng-repeat="game in heatData" ng-class="{'even' : $index % 2 === 0}">
+	      <!-- Each game should end up looking something like this:
+	        Date: May 29, 1997
+	        Utah Jazz - 103
+	        Houston Rockets - 100
+	      -->
+	      Date: {{game.createdAt | date}} <br />
+	      {{homeTeam}} - {{game.homeTeamScore}} <br />
+	      {{game.opponent}} - {{game.opponentScore}} </br />
+	    </div>
+	  </div>
+	</div>
 </div>
+
