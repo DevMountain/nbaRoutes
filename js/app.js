@@ -1,7 +1,16 @@
-var app = angular.module('nbaRoutes', ['ngRoute']);
+var app = angular.module('nbaRoutes', ['ui.router']);
 
-app.config(function($routeProvider, $httpProvider){
-  $httpProvider.interceptors.push('httpRequestInterceptor');
+app.config(function ($stateProvider, $httpProvider) {
+    $httpProvider.interceptors.push('httpRequestInterceptor');
 
-  //router here
+    //the students code below
+    $stateProvider
+        .state('home', {
+            url: '/',
+            templateUrl: 'js/home/homeTmpl.html',
+            controller: 'homeCtrl'
+        });
+  
+  
+    //the students code above
 });

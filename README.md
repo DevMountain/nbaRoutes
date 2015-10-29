@@ -10,10 +10,10 @@ In this repo you'll continue to practice fundamental Angular principles you've l
 For this project you're going to need to serve your files through a server
 * Fork and clone this repository
 * Open up your terminal and (if you have Node/NPM) run  
-  `sudo npm install -g http-server`
+  `sudo npm install -g live-server`
 * Now once you want to check out your code, cd into your folder and run  
-  `http-server`  
-  The line after should print out: `Starting up http-server, serving ./ on: http://0.0.0.0:8080`
+  `live-server`  
+  The line after should print out: `Starting ... at http://127.0.0.1:8080`
 * Go to http://localhost:8080. You should see the beginnings of your application.
 
 
@@ -21,7 +21,7 @@ For this project you're going to need to serve your files through a server
 A few things have been included for you
 * images
 * defaultHeaders.js -- makes parse work
-* ['ngRoute'] as a dependency for our module in app.js
+* ['ui.router'] as a dependency for our module in app.js
 
 Take a look at how the routes are broken into folders. This is a very easy way to keep things modular!
 * 'js/home' folder -- files that all have to do with the home (or index) page
@@ -33,10 +33,10 @@ Check out the index.html page
 * nbaRoutes is included as the name of our app
 * mainCtrl is included and associated with everything in the main-container
 * a menu is created that's going to be at the top of the page for every route
-* ngRoute script tag -- doesn't come built-in with Angular 1.3
-* &lt;ng-view&gt; is included and inside of our mainCtrl  
+* ui-router script tag -- doesn't come built-in with Angular
+* &lt;<div ui-view></div>&gt; is included and inside of our index.html
 
-The &lt;ng-view&gt; element and it's placement is crucial to understanding how routing works. That simple &lt;ng-view&gt; holds the power to the universe, or at least the routes inside this app. The router is going to take that element and inject certain templates (html pages) into it depending on which route we're using. The template that is injected into the &lt;ng-view&gt; element depends entirely on what we specify in using the $routeProvider object in our app.js file. Creating a router this way allows us to dynamically switch templates and controllers based on the URL.
+The &lt;<div ui-view></div>&gt; element and it's placement is crucial to understanding how routing works. That simple &lt;<div ui-view></div>&gt; holds the power to the universe, or at least the routes inside this app. The router is going to take that element and inject certain templates (html pages) into it depending on which route we're using. The template that is injected into the &lt;<div ui-view></div>&gt; element depends entirely on what we specify in using the $stateProvider object in our app.js file. Creating a router this way allows us to dynamically switch templates and controllers based on the URL.
 
 Once you feel VERY comfortable with the existing codebase, move on to Step 2.
 
@@ -63,7 +63,7 @@ Now that we've set up those two methods on our teamService object, we can close 
 
 ## Step 3: Start to Configure the Router
 As I mentioned in step 1, setting up the router is perhaps the most important part of this entire application. Our router is going to decide which template and controller get used based on what URL we're currently on.
-* Open up your app.js file. Modify your router so whenever the user is at the index page (/), have the templateUrl be js/home/homeTmpl.html and the controller be 'homeCtrl'. We will complete the rest of this route a little later.
+* Open up your app.js file. Modify your router so that there is a state called 'home' so that whenever the user is at the index page (/), have the templateUrl be js/home/homeTmpl.html and the controller be 'homeCtrl'. We will complete the rest of this route a little later.
 * Now we're going to set up the individual team's routes. It's important to understand that all three teams (Jazz, Lakers, Heat) are going to be using the same Controller and the same Template.
   - Whenever the user goes to '/teams/:team' use 'js/teams/teamTmpl.html' as the templateUrl and use 'teamCtrl' as the controller.
   - Take note of the /:team that's in the URL. Remember, that makes it so your application is able to keep track of certain states based on which team is located in the URL. For example, when the user visits yoursite.com/teams/utahjazz, in our controller $routeParams.team is going to be equal to 'utahjazz'. This allows us to then pass in the specific team into our getTeamData method that's on our service and get only that teams data. Also note that the menu in our index.html page have links that point to the different teams (which will be caught by :team in our router).
