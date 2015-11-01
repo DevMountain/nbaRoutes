@@ -1,8 +1,8 @@
 var app = angular.module('nbaRoutes');
 
-app.controller('teamCtrl', function ($scope, $stateParams, teamData, teamService, $q, $http) {
+app.controller('teamCtrl', function ($scope, $stateParams, teamData, teamService) {
 
-    $scope.newGame = {};
+    $scope.teamData = teamData;
 
     $scope.showNewGameForm = false;
 
@@ -23,24 +23,26 @@ app.controller('teamCtrl', function ($scope, $stateParams, teamData, teamService
         $scope.logoPath = 'images/heat-logo.png';
     }
 
-    // $scope.submitGame = function () {
-    //     $scope.newGame.homeTeam = $scope.homeTeam.split(' ').join('').toLowerCase();
-    //     teamService.addNewGame($scope.newGame)
-    //         .then(function () {
-    //             teamService.getTeamData($scope.newGame.homeTeam)
-    //                 .then(function (data) {
-    //                     $scope.teamData = data;
-    //                     $scope.newGame = {};
-    //                 });
-    //         });
-    // };
+    $scope.newGame = {};
 
-
-    $scope.teamData = teamData;
-
-    console.log('my state params are: ', $stateParams);
-    // console.log('my scope is: ', $scope);
-
+    $scope.submitGame = function () {
+        
+        $scope.newGame.homeTeam = $scope.homeTeam.split(' ').join('').toLowerCase();
+        $scope.newGame.opponent = $scope.opponent;
+        $scope.newGame.homeTeamScore = $scope.homeTeamScore;
+        $scope.newGame.opponentScore = $scope.opponentScore;
+        teamService.addNewGame($scope.newGame)
+            .then(function () {
+                
+                $scope.toggleNewGameForm();
+                teamService.getTeamData($scope.newGame.homeTeam)
+                    .then(function (data) {
+                        
+                        $scope.teamData = data;
+                        $scope.newGame = {};
+                    });
+            });
+    };
 
 
 });

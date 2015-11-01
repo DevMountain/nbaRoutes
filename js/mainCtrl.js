@@ -1,8 +1,6 @@
 var app = angular.module('nbaRoutes');
 
-app.controller('mainCtrl', function ($scope, $stateParams) {
-    
-    // console.log($stateParams);
+app.controller('mainCtrl', function ($scope) {
     
     $scope.teams = [
         "Atlanta Hawks",

@@ -12,7 +12,7 @@ app.service('teamService', function ($http, $q) {
         else gameObj.won = false;
         return $http.post(url, gameObj);
     };
-
+    
     this.getTeamData = function (team) {
 
         var deferred = $q.defer();
@@ -28,7 +28,6 @@ app.service('teamService', function ($http, $q) {
             results.wins = wins;
             results.losses = losses;
             deferred.resolve(results);
-            console.log('and the resolved results are... ', results);
         });
 
         return deferred.promise;

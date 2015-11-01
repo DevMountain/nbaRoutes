@@ -3,20 +3,20 @@
         <img ng-src="{{ logoPath }}">
     </div>
     <div class="record">
-        <h1> Wins: ???????? Losses: ???????? </h1>
+        <h1> Wins: {{ teamData.wins }} Losses: {{ teamData.losses }} </h1>
     </div>
-    <div class="btn" ng-click="$__FIXME__$"> Add a New Game </div>
-    <form ng-show="$__FIXME__$" class="form">
+    <div class="btn" ng-click="toggleNewGameForm()"> Add a New Game </div>
+    <form ng-show="showNewGameForm" class="form">
         <span class="large"> Opponent: </span>
         <br />
-        <select ng-model="$__FIXME__$" ng-options="team for team in teams" class="form-control" required name="team"></select>
+        <select ng-model="opponent" ng-options="team for team in teams" class="form-control" required name="team"></select>
         <br />
         <span class="large"> Score: </span>
-        <br /> ????????:
-        <input class="inputs" type="text" ng-model="$__FIXME__$" placeholder="Home Score"> ????????:
-        <input type="text" class="inputs" ng-model="$__FIXME__$" placeholder="Opponent Score">
+        <br /> {{ homeTeam }}:
+        <input class="inputs" type="text" ng-model="homeTeamScore" placeholder="Home Score"> {{ opponent }}:
+        <input type="text" class="inputs" ng-model="opponentScore" placeholder="Opponent Score">
         <br />
-        <button ng-click="$__FIXME__$"> Submit Game </button>
+        <button ng-click="submitGame()"> Submit Game </button>
     </form>
     <div class="team-data">
         <div class="game" ng-repeat="game in teamData" ng-class="{'even' : $index % 2 === 0}">
@@ -25,12 +25,10 @@
         Utah Jazz - 103
         Houston Rockets - 100
       -->
-            Date: ????????
-            <br /> ???????? - ????????
-            <br /> ???????? - ????????
-            </br />
+            Date: {{ game.createdAt }}
+            <br /> {{ homeTeam }} - {{ game.homeTeamScore }}
+            <br /> {{ game.opponent }} - {{ game.opponentScore }}
+            <br />
         </div>
     </div>
 </div>
-
-{{ teamData }}
