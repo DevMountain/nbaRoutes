@@ -1,7 +1,6 @@
 var app = angular.module('nbaRoutes');
 
-// this service needs to be injected some dependencies
-app.service('teamService', function () {
+app.service('teamService', function ($http, $q) {
 
     // service code
 

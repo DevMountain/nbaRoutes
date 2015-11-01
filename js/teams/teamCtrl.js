@@ -1,7 +1,6 @@
 var app = angular.module('nbaRoutes');
 
-// this controller needs to be injected some dependencies
-app.controller('teamCtrl', function () {
+app.controller('teamCtrl', function ($scope, $stateParams, teamData, teamService) {
 
     // controller code
 
