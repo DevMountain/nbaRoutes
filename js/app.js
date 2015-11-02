@@ -1,7 +1,9 @@
-var app = angular.module('nbaRoutes', ['ngRoute']);
+var app = angular.module('nbaRoutes', ['ui.router']);
 
-app.config(function($routeProvider, $httpProvider){
-  $httpProvider.interceptors.push('httpRequestInterceptor');
+app.config(function ($stateProvider, $urlRouterProvider, $httpProvider) {
 
-  //router here
+    $httpProvider.interceptors.push('httpRequestInterceptor');
+
+    // routing configuration code
+
 });
