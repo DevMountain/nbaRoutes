@@ -85,13 +85,13 @@ Now is where we want to see which team's value we should get. Remember this is e
 
 Now we want to create a method on our scope object that will be called whenever someone submits a new game.
 * Create a method on scope called `submitGame:`.
-* First thing we want to do is take the homeTeam property that we set on the scope earlier and strip out the spaces so we can use it as an endpoint in our restAPI. Add a property onto our newGame object that is already on the scope called homeTeam and set it equal to $scope.homeTeam.split(' ').join('').toLowerCase()
-* Now we want to call the addNewGame method on our teamService method. So call addNewGame and pass it $scope.newGame
-* Take a look at the teamService.js file and notice what addNewGame returns.
-* You should have noticed it returns a promise. That means immediately after we call addNewGame we can call .then()
-* Call .then and pass it a callback function, this function is then going to call the getTeamData service passing it $scope.newGame.homeTeam. Notice what we're doing. We've added a new game to the home teams schedule and now we need to go and get the new data that's in our database.
-* You should notice that the getTeamData method is also returning a promise. So just like before, call .then immediately after you call getTeamData() and give it a callback function which accepts parameter (which is going to be the data returned from the getTeamData method)
-* Now we want to set a few properties on our scope based off the data we got from our promise. First, set $scope.teamData equal to the data you got back from the promise. Then, reset $scope.newGame to be an empty object, then set $scope.showNewGameForm back to false.
+* First thing we want to do is take the `homeTeam` property that we set on the scope earlier and strip out the spaces so we can use it as an endpoint in our restAPI. Add a property onto our `newGame` object that is already on the scope called `homeTeam` and set it equal to `$scope.homeTeam.split(' ').join('').toLowerCase()`
+* Now we want to call the `addNewGame` method on our `teamService` method. Call `addNewGame` and pass it `$scope.newGame`
+* Take a look at the `teamService.js` file and notice what `addNewGame` returns.
+* You should have noticed it returns a promise. That means immediately after we call `addNewGame` we can call `.then()`
+* Call `.then` and pass it a callback function. this function is then going to call the `getTeamData` service, passing it `$scope.newGame.homeTeam`. We've added a new game to the home team's schedule and now we need to go and get the new data that's in our database.
+* You should notice that the `getTeamData` method is also returning a promise. So just like before, call `.then` immediately after you call `getTeamData()` and give it a callback function which accepts parameter (which is going to be the data returned from the `getTeamData` method)
+* Now we want to set a few properties on our scope based off the data we got from our promise. First, set `$scope.teamData` equal to the data you got back from the promise. Then, reset `$scope.newGame` to be an empty object, then set `$scope.showNewGameForm` back to `false`.
 
 
 ## Step 5: Set up for teamTmpl file
