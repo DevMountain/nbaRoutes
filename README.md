@@ -84,7 +84,7 @@ Now is where we want to see which team's value we should get. Remember this is e
 * Create an `if` statement and check which team the current URL is on (`utahjazz`, `losangeleslakers`, or `miamiheat`). Depending on which team the URL is on, do the following for each team. Set a property on the scope called `homeTeam` that is equal to 'Utah Jazz', 'Los Angeles Lakers', or 'Miami Heat'. Also, (depending on which team), add a property to the scope called `logoPath` that points to the image of the team. For example, if `$stateParams.team` is equal to 'utahjazz', `$scope.homeTeam` is going to equal 'Utah Jazz' and `$scope.logoPath` is going to equal `'images/jazz-logo.png'`.
 
 Now we want to create a method on our scope object that will be called whenever someone submits a new game.
-* Create a method on scope called `submitGame:`.
+* Create a method on `$scope` called `submitGame`.
 * First thing we want to do is take the `homeTeam` property that we set on the scope earlier and strip out the spaces so we can use it as an endpoint in our restAPI. Add a property onto our `newGame` object that is already on the scope called `homeTeam` and set it equal to `$scope.homeTeam.split(' ').join('').toLowerCase()`
 * Now we want to call the `addNewGame` method on our `teamService` method. Call `addNewGame` and pass it `$scope.newGame`
 * Take a look at the `teamService.js` file and notice what `addNewGame` returns.
