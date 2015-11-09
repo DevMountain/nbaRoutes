@@ -76,7 +76,7 @@ As I mentioned in step 1, setting up the router is perhaps the most important pa
 ## Step 4: Configure the teamCtrl.js File
 * Head over to your teamCtrl.js file. We should have four things that are being injected into the controller. `$scope`, `$stateParams` (to give us access to `:team` in the url), `teamService`, and `teamData`. `teamData` hasn't been injected for you yet. teamData is from the previous step. It gives us the data that is being returned from `teamService.getData` in our resolve block in the `app.js` file.
 * First thing we want to do is get the data (`teamData`) that is being resolved in our app.js file and put that data on the scope. So in your controller, set `teamData` equal to `$scope.teamData`. Now that data is on our scope and can be accessed in the view.
-* Now create a property on the `$scope` object called `newGame` and set it equal to an empty object. This is the object that is going to be passed to `teamSerivce.addNewGame` method later on.
+* Now create a property on the `$scope` object called `newGame` and set it equal to an empty object. This is the object that is going to be passed to `teamService.addNewGame` method later on.
 
 * Create another property on the scope object called `showNewGameForm` and set it equal to `false`. Then create a method on our scope object called `toggleNewGameForm` which takes the current value of `$scope.showNewGameForm` and makes it the opposite of what it currently is. We're going to use both of these properties later on in our view to toggle the form to add a new game.
 
