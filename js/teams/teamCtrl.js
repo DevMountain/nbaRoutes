@@ -1,8 +1,5 @@
 var app = angular.module('nbaRoutes');
-
-// this controller needs to be injected the resolved data from the router
+// the resolved data from the router needs to be injected into the controller
 app.controller('teamCtrl', function ($scope, $stateParams, teamService) {
-
-    // controller code
 
 });
