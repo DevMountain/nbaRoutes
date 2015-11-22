@@ -1,12 +1,14 @@
 <img src="https://devmounta.in/img/logowhiteblue.png" width="250" align="right">
 
 NbaRoutes
-========
+=========
+
+##Objective
+Create an Angular application that uses routes navigate through a list of NBA teams
 
 NBA Routes is the first exposure you'll get to building a full fledged app with more than just one 'route'. Take a look at the full working version of the app [here](http://tylermcginnis.github.io/nbaRoutes). Notice that every route, whether it's the home page or individual team pages, all are retrieving  data before the route loads by using a **resolve**.
 
 In this repo you'll continue to practice fundamental Angular principles you've learned like controllers, services, promises and getting data from RESTful API's while also learning new concepts like routing and resolving data.
-
 
 ## Setup
 For this project you're going to need to serve your files through a server
